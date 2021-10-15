@@ -1,0 +1,144 @@
+@use "presets" as *;
+@use "mixins" as *;
+
+.left-sidebar {
+    margin-bottom: $gap-xl;
+}
+
+.vertical-slider {
+    border-radius: 4px;
+    overflow: hidden;
+
+    &__image {
+        width: 100%;
+    }
+}
+
+.user-login {
+    position: relative;
+
+    &__tabs {
+        position: absolute;
+        top: 0;
+        right: $gap;
+        border: none;
+        margin-right: -5px;
+
+        a {
+            background-color: transparent !important;
+            border: none !important;
+            color: $color-gray;
+            padding: 15px 5px 13px !important;
+        }
+
+        .active a {
+            color: $color-white !important;
+        }
+    }
+}
+
+$image-size: 75px;
+$image-size-width-padding: $image-size + $gap-md;
+
+.site-news__item {
+    clear: both;
+    position: relative;
+
+    &:not(:last-child) {
+        min-height: $image-size-width-padding;
+        margin-bottom: $gap;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: calc(100% - #{$image-size-width-padding});
+            height: 1px;
+            background-color: $color-gray;
+            bottom: -4px;
+            right: 0;
+        }
+    }
+
+    &:hover {
+        a {
+            color: $color-accent;
+        }
+
+        .thumbnail {
+            border-color: $color-accent;
+            background-color: $color-accent;
+        }
+    }
+
+    &-thumbnail {
+        float: left;
+        width: $image-size;
+        margin: 0 $gap-md $gap-md 0;
+    }
+
+    &-image {
+        width: 100%;
+    }
+
+    &-title {
+        transition: color 0.25s;
+        margin-bottom: 0.5em;
+    }
+
+    &-link {
+        @include block-shortener(1rem, 1.5, 50px, 2);
+    }
+
+    &-date {
+        text-align: right;
+        font-size: 0.8rem;
+        color: $color-gray-dark;
+    }
+}
+
+.top-films {
+    &__body {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &__list {
+        margin-bottom: 0;
+    }
+
+    &__link {
+        background-color: transparent;
+        margin-right: -1px;
+        margin-left: -1px;
+        color: $color-primary !important;
+        padding-right: 50px;
+
+        &:first-child {
+            border-top: none;
+            border-radius: 0;
+        }
+
+        &:last-child {
+            border-bottom: none;
+            border-radius: 0;
+        }
+
+        &:hover,
+        &:focus {
+            color: $color-white !important;
+            background-color: $color-accent !important;
+            border-color: $color-accent;
+
+            .badge {
+                background-color: $color-dark;
+            }
+        }
+    }
+
+    &__badge {
+        position: absolute;
+        right: $gap;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
