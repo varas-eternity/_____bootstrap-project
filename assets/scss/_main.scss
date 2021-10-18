@@ -3,14 +3,6 @@
 
 .main {
     margin-bottom: $gap-xl;
-
-    .site-search {
-        margin-bottom: 45px;
-    }
-
-    .user-login {
-        margin-bottom: 60px;
-    }
 }
 
 .new-films,
@@ -103,4 +95,12 @@
             transition: color 0.25s;
         }
     }
+}
+
+.main .site-search {
+    margin-bottom: 45px;
+}
+
+.main .user-login {
+    margin-bottom: 60px;
 }
